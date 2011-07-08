@@ -1,0 +1,3 @@
+<script type="text/javascript" src="CarMasterDetail.ui.js"></script>
+<script type="text/javascript" src="CarMasterDetail.js"></script>
+<script type="text/javascript" src="carStore.js"></script>

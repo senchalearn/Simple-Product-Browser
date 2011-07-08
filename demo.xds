@@ -1,0 +1,129 @@
+{
+	"name": "demo.xds",
+	"projectId": "B96B7C54-028F-4F0E-BC24-E0F04CF95AFD",
+	"settings": {
+		"urlPrefix": "http://localhost/releases/ext-3.2-rc/examples/demo/",
+		"directAPI": "",
+		"spacesToIndent": "4",
+		"codeGenFormat": "Class",
+		"extPath": "http://extjs.cachefly.net/ext-3.2.0/"
+	},
+	"xdsVersion": "xds-1.0.0.7c",
+	"components": [
+		{
+			"cid": "panel",
+			"jsClass": "CarMasterDetail",
+			"layoutConfig": {
+				"align": "stretch"
+			},
+			"userConfig": {
+				"layout": "vbox",
+				"height": 400,
+				"frame": true,
+				"title": "Grid",
+				"width": 565
+			},
+			"cn": [
+				{
+					"cid": "grid",
+					"jsClass": "MyGrid",
+					"userConfig": {
+						"flex": 1,
+						"header": false,
+						"store": "MyStore",
+						"autoRef": "grid",
+						"viewConfig": {
+							"forceFit": true
+						}
+					},
+					"cn": [
+						{
+							"cid": "gridcolumn",
+							"jsClass": "MyColumn",
+							"userConfig": {
+								"header": "Manufacturer",
+								"dataIndex": "manufacturer"
+							}
+						},
+						{
+							"cid": "gridcolumn",
+							"jsClass": "MyColumn1",
+							"userConfig": {
+								"header": "Model",
+								"dataIndex": "model"
+							}
+						},
+						{
+							"cid": "numbercolumn",
+							"jsClass": "MyColumn2",
+							"userConfig": {
+								"header": "Price",
+								"dataIndex": "price",
+								"format": "$0,000.00"
+							}
+						}
+					]
+				},
+				{
+					"cid": "panel",
+					"jsClass": "MyPanel1",
+					"userConfig": {
+						"flex": 1,
+						"tpl": "<img src=\"cars/{img}\" style=\"float: right\" />\nManufacturer: {manufacturer}<br/>\nModel: <a href=\"{wiki}\" target=\"_blank\">{model}</a><br/>\nPrice: {price:usMoney}<br/>",
+						"padding": 7,
+						"autoRef": "detail",
+						"title": "-ext-undefined-"
+					}
+				}
+			]
+		}
+	],
+	"stores": [
+		{
+			"cid": "jsonstore",
+			"jsClass": "carStore",
+			"userConfig": {
+				"url": "cars/cars.json",
+				"root": "data",
+				"autoLoad": true
+			},
+			"cn": [
+				{
+					"cid": "datafield",
+					"jsClass": "MyField",
+					"userConfig": {
+						"name": "manufacturer"
+					}
+				},
+				{
+					"cid": "datafield",
+					"jsClass": "MyField1",
+					"userConfig": {
+						"name": "model"
+					}
+				},
+				{
+					"cid": "datafield",
+					"jsClass": "MyField2",
+					"userConfig": {
+						"name": "price"
+					}
+				},
+				{
+					"cid": "datafield",
+					"jsClass": "MyField3",
+					"userConfig": {
+						"name": "wiki"
+					}
+				},
+				{
+					"cid": "datafield",
+					"jsClass": "MyField4",
+					"userConfig": {
+						"name": "img"
+					}
+				}
+			]
+		}
+	]
+}
